@@ -1,0 +1,10 @@
+{
+	admin off
+}
+
+bracy.dev {
+	tls certs/certificate.pem certs/key.pem
+	file_server {
+		root public_html
+	}
+}
