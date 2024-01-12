@@ -2,6 +2,16 @@
 	admin off
 }
 
+www.bracy.dev {
+	tls /etc/caddy/certs/certificate.pem /etc/caddy/certs/key.pem {
+		client_auth {
+			mode require_and_verify
+			trusted_ca_cert_file /etc/caddy/certs/authenticated_origin_pull_ca.pem
+		}
+	}
+	redir https://bracy.dev{uri} permanent	
+}
+
 bracy.dev {
 	tls /etc/caddy/certs/certificate.pem /etc/caddy/certs/key.pem {
 		client_auth {
