@@ -19,6 +19,7 @@ bracy.dev {
 			trusted_ca_cert_file /etc/caddy/certs/authenticated_origin_pull_ca.pem
 		}
 	}
+	encode zstd gzip
 	file_server {
 		root /etc/caddy/public_html
 	}
